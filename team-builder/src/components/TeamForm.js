@@ -13,8 +13,8 @@ const TeamForm = (props) => {
         setTeamMember({ name: "", email: "", role: "" });
     }
     return (
-        <div>
-            <form onSubmit={submitTeamMember}>
+        <div >
+            <form className="form" onSubmit={submitTeamMember}>
                 <label htmlFor="name">Name: </label>
                 <input type="text" placeholder="Name" name="name" value={teamMember.name} onChange={e => changeTeamMember(e)} />
                 <label htmlFor="email">Email: </label>

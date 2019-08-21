@@ -18,3 +18,25 @@
   background:#282c34;
   color:white;
 }
+
+.form{
+  display:flex;
+  flex-direction:column;
+  width:20%;
+  margin:0 auto;
+  text-align:left;
+}
+
+.form input{
+  margin-bottom:3%;
+}
+
+.form button{
+  width:50%;
+  margin:0 auto;
+  padding:2% 1%;
+  background:#282c34;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
