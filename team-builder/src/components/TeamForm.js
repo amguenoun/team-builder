@@ -6,16 +6,21 @@ const TeamForm = (props) => {
     const changeTeamMember = (event) => {
         setTeamMember({ ...teamMember, [event.target.name]: event.target.value });
     };
-    console.log(teamMember);
+
+    const submitTeamMember = (e) => {
+        e.preventDefault();
+        props.addTeamMember(teamMember);
+        setTeamMember({ name: "", email: "", role: "" });
+    }
     return (
         <div>
-            <form>
+            <form onSubmit={submitTeamMember}>
                 <label htmlFor="name">Name: </label>
-                <input type="text" placeholder="Name" name="name" onChange={e => changeTeamMember(e)} />
+                <input type="text" placeholder="Name" name="name" value={teamMember.name} onChange={e => changeTeamMember(e)} />
                 <label htmlFor="email">Email: </label>
-                <input type="email" placeholder="Email" name="email" onChange={e => changeTeamMember(e)} />
+                <input type="email" placeholder="Email" name="email" value={teamMember.email} onChange={e => changeTeamMember(e)} />
                 <label htmlFor="role">Role: </label>
-                <input type="text" placeholder="Role" name="role" onChange={e => changeTeamMember(e)} />
+                <input type="text" placeholder="Role" name="role" value={teamMember.role} onChange={e => changeTeamMember(e)} />
                 <button type="submit">Add Team Member!</button>
             </form>
         </div>
