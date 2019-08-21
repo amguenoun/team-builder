@@ -21,11 +21,10 @@ function App() {
   const editMember = (member) => {
     teamList.map(item => {
       if (item.id === member.id) {
-        console.log(item, member);
-        item.name = member.name;
-        item.role = member.role;
-        item.email = member.email;
-        return item;
+        let updatedObject = ({ ...item, ...member });
+        item.name = updatedObject.name;
+        item.email = updatedObject.email;
+        item.role = updatedObject.role;
       } else {
         return console.log("Error: Not Found", item.id, member.id);
       }
@@ -33,7 +32,6 @@ function App() {
     setMemberToEdit(undefined);
   }
 
-  console.log(memberToEdit);
   return (
     <div className="App">
       <TeamHeader />
