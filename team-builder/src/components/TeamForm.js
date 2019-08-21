@@ -35,7 +35,7 @@ const TeamForm = (props) => {
                 <input type="email" placeholder="Email" name="email" value={teamMember.email} onChange={e => changeTeamMember(e)} />
                 <label htmlFor="role">Role: </label>
                 <input type="text" placeholder="Role" name="role" value={teamMember.role} onChange={e => changeTeamMember(e)} />
-                <button type="submit">Add Team Member!</button>
+                <button type="submit">{(props.memberToEdit !== undefined) ? <>Complete Edit</> : <>Add Team Member</>}</button>
             </form>
         </div>
     );
