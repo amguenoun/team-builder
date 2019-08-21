@@ -4,7 +4,7 @@ const TeamList = (props) => {
     return (
         <div>
             {props.teamList.map(member => {
-                return <p key={new Date()}>I am {member.name}, a {member.role} and you can contact me at {member.email}</p>
+                return <p>I am {member.name}, a {member.role} and you can contact me at {member.email}</p>
             })}
         </div>
     );
