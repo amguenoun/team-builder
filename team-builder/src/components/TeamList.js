@@ -2,9 +2,16 @@ import React from "react";
 
 const TeamList = (props) => {
     return (
-        <div>
+        <div className="card-list">
             {props.teamList.map(member => {
-                return <p>I am {member.name}, a {member.role} and you can contact me at {member.email}</p>
+                return (
+                    <div className="member-card">
+                        <h2>{member.name}</h2>
+                        <hr />
+                        <p>{member.role}</p>
+                        <p>{member.email}</p>
+                    </div>
+                );
             })}
         </div>
     );
