@@ -25,8 +25,6 @@ function App() {
         item.name = updatedObject.name;
         item.email = updatedObject.email;
         item.role = updatedObject.role;
-      } else {
-        return console.log("Error: Not Found", item.id, member.id);
       }
     });
     setMemberToEdit(undefined);
