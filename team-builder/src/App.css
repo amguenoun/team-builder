@@ -19,6 +19,15 @@
   color:white;
 }
 
+.member-card button{
+  margin-bottom:4%;
+  background:white;
+  color:black;
+  border:none;
+  padding:1% 10%;
+  cursor:pointer;
+}
+
 .form{
   display:flex;
   flex-direction:column;
