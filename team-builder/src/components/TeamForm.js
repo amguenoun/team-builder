@@ -5,9 +5,11 @@ const TeamForm = (props) => {
     if (props.memberToEdit !== undefined) {
         startObject = props.memberToEdit;
     }
+
     useEffect(() => {
         setTeamMember(startObject);
     }, [props.memberToEdit])
+
     const [teamMember, setTeamMember] = useState(startObject);
 
     const changeTeamMember = (event) => {
@@ -16,7 +18,12 @@ const TeamForm = (props) => {
 
     const submitTeamMember = (e) => {
         e.preventDefault();
-        props.addTeamMember({ ...teamMember, id: Date.now() });
+        if (props.memberToEdit !== undefined) {
+            props.editMember(teamMember);
+        }
+        else {
+            props.addTeamMember({ ...teamMember, id: Date.now() });
+        }
         setTeamMember({ name: "", email: "", role: "" });
     }
     return (

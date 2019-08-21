@@ -17,11 +17,27 @@ function App() {
   const handleMemberEdit = (member) => {
     setMemberToEdit(member);
   }
+
+  const editMember = (member) => {
+    teamList.map(item => {
+      if (item.id === member.id) {
+        console.log(item, member);
+        item.name = member.name;
+        item.role = member.role;
+        item.email = member.email;
+        return item;
+      } else {
+        return console.log("Error: Not Found", item.id, member.id);
+      }
+    });
+    setMemberToEdit(undefined);
+  }
+
   console.log(memberToEdit);
   return (
     <div className="App">
       <TeamHeader />
-      <TeamForm addTeamMember={addTeamMember} memberToEdit={memberToEdit} />
+      <TeamForm addTeamMember={addTeamMember} memberToEdit={memberToEdit} editMember={editMember} />
       <TeamList teamList={teamList} handleMemberEdit={handleMemberEdit} />
     </div>
   );
