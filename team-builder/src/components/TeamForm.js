@@ -9,7 +9,7 @@ const TeamForm = (props) => {
 
     const submitTeamMember = (e) => {
         e.preventDefault();
-        props.addTeamMember(teamMember);
+        props.addTeamMember({ ...teamMember, id: Date.now() });
         setTeamMember({ name: "", email: "", role: "" });
     }
     return (
