@@ -7,7 +7,7 @@ const TeamForm = (props) => {
     }
     useEffect(() => {
         setTeamMember(startObject);
-    }, [startObject])
+    }, [props.memberToEdit])
     const [teamMember, setTeamMember] = useState(startObject);
 
     const changeTeamMember = (event) => {
