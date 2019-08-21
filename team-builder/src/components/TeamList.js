@@ -10,6 +10,7 @@ const TeamList = (props) => {
                         <hr />
                         <p>{member.role}</p>
                         <p>{member.email}</p>
+                        <button onClick={() => props.handleMemberEdit(member)}>Edit</button>
                     </div>
                 );
             })}

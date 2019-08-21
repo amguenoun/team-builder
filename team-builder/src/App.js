@@ -8,16 +8,21 @@ import TeamForm from "./components/TeamForm";
 
 function App() {
   const [teamList, setTeamList] = useState(teamData);
+  const [memberToEdit, setMemberToEdit] = useState(undefined);
 
   const addTeamMember = (member) => {
     setTeamList([...teamList, member])
   };
 
+  const handleMemberEdit = (member) => {
+    setMemberToEdit(member);
+  }
+  console.log(memberToEdit);
   return (
     <div className="App">
       <TeamHeader />
-      <TeamForm addTeamMember={addTeamMember} />
-      <TeamList teamList={teamList} />
+      <TeamForm addTeamMember={addTeamMember} memberToEdit={memberToEdit} />
+      <TeamList teamList={teamList} handleMemberEdit={handleMemberEdit} />
     </div>
   );
 }

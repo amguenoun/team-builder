@@ -1,7 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const TeamForm = (props) => {
-    const [teamMember, setTeamMember] = useState({ name: "", email: "", role: "" });
+    let startObject = { name: "", email: "", role: "" };
+    if (props.memberToEdit !== undefined) {
+        startObject = props.memberToEdit;
+    }
+    useEffect(() => {
+        setTeamMember(startObject);
+    }, [startObject])
+    const [teamMember, setTeamMember] = useState(startObject);
 
     const changeTeamMember = (event) => {
         setTeamMember({ ...teamMember, [event.target.name]: event.target.value });
